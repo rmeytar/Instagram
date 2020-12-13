@@ -39,7 +39,14 @@ class SignInViewController: UIViewController {
        passwordTextField.layer.addSublayer(bottomLayerPassword)
         
         handleTextField()
-        
+    }
+    
+    //keeps the user loged in
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
+        }
     }
     
     func handleTextField() {
