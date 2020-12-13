@@ -44,7 +44,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="AtX-3e-X5M" kind="presentation" id="EKP-SN-3GP"/>
+                                            <action selector="signInButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U94-mA-MX7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -86,6 +86,8 @@
                     <connections>
                         <outlet property="emailTextField" destination="T3G-uq-H4E" id="55y-EX-qYo"/>
                         <outlet property="passwordTextField" destination="qcZ-aX-NW0" id="bKc-JT-Xzc"/>
+                        <outlet property="signInButton" destination="0FS-Jm-WbT" id="aFz-oB-YF4"/>
+                        <segue destination="AtX-3e-X5M" kind="presentation" identifier="signInToTabbarVC" id="UDw-TA-xJy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -183,6 +185,7 @@
                         <outlet property="profileImage" destination="BHj-fP-2pt" id="CtR-0n-dPM"/>
                         <outlet property="signUpButton" destination="pUo-FM-bxS" id="AfR-cl-Smb"/>
                         <outlet property="usernameTextField" destination="6iu-s6-Blb" id="zaE-ZJ-0Ja"/>
+                        <segue destination="AtX-3e-X5M" kind="presentation" identifier="signUnToTabbarVC" id="EJw-Wb-FJC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DCk-m8-tvd" sceneMemberID="firstResponder"/>
@@ -198,6 +201,9 @@
             <point key="canvasLocation" x="1467" y="5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="EJw-Wb-FJC"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="placeholderImg" width="225" height="225"/>
     </resources>
