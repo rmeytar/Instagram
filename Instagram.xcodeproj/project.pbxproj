@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		175F4FF8896E52B520009A13 /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FFCDB5A935275961294CBC /* Pods_Instagram.framework */; };
+		BD0617052587CC8000DA39BA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0617042587CC8000DA39BA /* AuthService.swift */; };
+		BD0617082587DE0B00DA39BA /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0617072587DE0B00DA39BA /* Config.swift */; };
+		BD0617342587EAAA00DA39BA /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0617332587EAAA00DA39BA /* ProgressHUD.swift */; };
 		BD3D7BA1257EBDD600217FF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D7BA0257EBDD600217FF2 /* AppDelegate.swift */; };
 		BD3D7BA3257EBDD600217FF2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D7BA2257EBDD600217FF2 /* SceneDelegate.swift */; };
 		BD3D7BA8257EBDD600217FF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3D7BA6257EBDD600217FF2 /* Main.storyboard */; };
@@ -33,6 +36,9 @@
 		24D6EA0415FBCB007AB11162 /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		39FFCDB5A935275961294CBC /* Pods_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C69597FE8E5139B4798FADE /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
+		BD0617042587CC8000DA39BA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		BD0617072587DE0B00DA39BA /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		BD0617332587EAAA00DA39BA /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressHUD.swift; path = "../../../Downloads/ProgressHUD-master/ProgressHUD/Sources/ProgressHUD.swift"; sourceTree = "<group>"; };
 		BD3D7B9D257EBDD600217FF2 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD3D7BA0257EBDD600217FF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD3D7BA2257EBDD600217FF2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +88,6 @@
 				24D6EA0415FBCB007AB11162 /* Pods-Instagram.debug.xcconfig */,
 				5C69597FE8E5139B4798FADE /* Pods-Instagram.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -116,11 +121,14 @@
 				BD3D7BA6257EBDD600217FF2 /* Main.storyboard */,
 				BD3D7BEA257F941B00217FF2 /* ViewControllers */,
 				BD3D7BA0257EBDD600217FF2 /* AppDelegate.swift */,
+				BD0617042587CC8000DA39BA /* AuthService.swift */,
+				BD0617072587DE0B00DA39BA /* Config.swift */,
 				BD3D7BA2257EBDD600217FF2 /* SceneDelegate.swift */,
 				BD3D7BA9257EBDD700217FF2 /* Assets.xcassets */,
 				BD3D7BAB257EBDD700217FF2 /* LaunchScreen.storyboard */,
 				BD3D7BEC257F96CE00217FF2 /* GoogleService-Info.plist */,
 				BD3D7BAE257EBDD700217FF2 /* Info.plist */,
+				BD0617332587EAAA00DA39BA /* ProgressHUD.swift */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -172,6 +180,7 @@
 				TargetAttributes = {
 					BD3D7B9C257EBDD600217FF2 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 				};
 			};
@@ -262,11 +271,14 @@
 			files = (
 				BD3D7BBA257EBF3900217FF2 /* SignInViewController.swift in Sources */,
 				BD3D7BCC257F88FE00217FF2 /* ProfileViewController.swift in Sources */,
+				BD0617342587EAAA00DA39BA /* ProgressHUD.swift in Sources */,
 				BD3D7BC3257F88DD00217FF2 /* DiscoverViewController.swift in Sources */,
 				BD3D7BA1257EBDD600217FF2 /* AppDelegate.swift in Sources */,
+				BD0617082587DE0B00DA39BA /* Config.swift in Sources */,
 				BD3D7BC9257F88F400217FF2 /* ActivityViewController.swift in Sources */,
 				BD3D7BA3257EBDD600217FF2 /* SceneDelegate.swift in Sources */,
 				BD3D7BC6257F88E800217FF2 /* CameraViewController.swift in Sources */,
+				BD0617052587CC8000DA39BA /* AuthService.swift in Sources */,
 				BD3D7BBD257EC3EF00217FF2 /* SignUpViewController.swift in Sources */,
 				BD3D7BC0257F88B100217FF2 /* HomeViewController.swift in Sources */,
 			);
@@ -448,6 +460,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Instagram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -457,6 +470,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Meytar.instagram.Instagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Instagram-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -468,6 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Instagram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -477,6 +493,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Meytar.instagram.Instagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Instagram-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -12,7 +12,7 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class SignUpViewController: UIViewController {
-
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -45,14 +45,14 @@ class SignUpViewController: UIViewController {
         emailTextField.layer.addSublayer(bottomLayerEmail)
         
         //רקע שקוף לתיבת הטקסט סיסמה,רמת שקיפות של הגדרת הטקסט סיסמה
-       passwordTextField.backgroundColor = UIColor.clear
-       passwordTextField.tintColor = UIColor.white
-       passwordTextField.textColor = UIColor.white
-       passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 1.0, alpha: 0.6)])
-       let bottomLayerPassword = CALayer()
-       bottomLayerPassword.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
-       bottomLayerPassword.backgroundColor = UIColor(red: 55/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
-       passwordTextField.layer.addSublayer(bottomLayerPassword)
+        passwordTextField.backgroundColor = UIColor.clear
+        passwordTextField.tintColor = UIColor.white
+        passwordTextField.textColor = UIColor.white
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 1.0, alpha: 0.6)])
+        let bottomLayerPassword = CALayer()
+        bottomLayerPassword.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
+        bottomLayerPassword.backgroundColor = UIColor(red: 55/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
+        passwordTextField.layer.addSublayer(bottomLayerPassword)
         
         //עיגול תמונת פרופיל
         profileImage.layer.cornerRadius = 40
@@ -61,8 +61,8 @@ class SignUpViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleSelectProfileImageView))
         profileImage.addGestureRecognizer(tapGesture)
         profileImage.isUserInteractionEnabled = true
-    
-      handleTextField()
+        signUpButton.isEnabled = false
+        handleTextField()
         
     }
     
@@ -71,7 +71,12 @@ class SignUpViewController: UIViewController {
         emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControl.Event.editingChanged)
         passwordTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControl.Event.editingChanged)
     }
-     
+    
+    //dismiss the keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     //if one of this is empty - we disable the sign up button.
     @objc func textFieldDidChange() {
         guard let username = usernameTextField.text, !username.isEmpty,
@@ -98,35 +103,18 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpBtn_touchUpInside(_ sender: Any) {
-        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { authResult, error in
-            if error != nil {
-                print(error!.localizedDescription)
-                return
-            }
-            
-            let uid = authResult?.user.uid
-            let storageRef = Storage.storage().reference(forURL: "gs://instagram-f48fa.appspot.com").child("profile_image").child(uid!)
-        
-            if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1) {
-                storageRef.putData(imageData, metadata: nil, completion: {(metadata, error) in
-                    if error != nil {
-                        return
-                    }
-                    storageRef.downloadURL(completion: { (url,error) in
-                        let profileImageUrl = url?.absoluteString
-                        self.setUserInformation(profileImageUrl: profileImageUrl!, username: self.usernameTextField.text!, email: self.usernameTextField.text!, uid: uid!)
-                    })
-                })
-            }
-        })
-    }
-    
-    func setUserInformation(profileImageUrl: String, username: String, email: String, uid: String){
-            let ref = Database.database().reference()
-            let usersReference = ref.child("users")
-        let newUserReference = usersReference.child(uid)
-            newUserReference.setValue(["username": username, "email": email, "profileImageUrl": profileImageUrl ])
-        self.performSegue(withIdentifier: "signUnToTabbarVC", sender: nil)
+        view.endEditing(true)
+        ProgressHUD.show("Waiting...", interaction: false)
+        if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1) {
+            AuthService.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, imageData: imageData, onSuccess: {
+                ProgressHUD.showSuccess("Success")
+                self.performSegue(withIdentifier: "signUnToTabbarVC", sender: nil)
+            }, onError: { (errorString) in
+                ProgressHUD.showError(errorString)
+            })
+        } else {
+            ProgressHUD.showError("profile Image can't be empty")
+        }
     }
 }
 
