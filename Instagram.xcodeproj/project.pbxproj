@@ -11,6 +11,9 @@
 		BD0617052587CC8000DA39BA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0617042587CC8000DA39BA /* AuthService.swift */; };
 		BD0617082587DE0B00DA39BA /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0617072587DE0B00DA39BA /* Config.swift */; };
 		BD0617342587EAAA00DA39BA /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0617332587EAAA00DA39BA /* ProgressHUD.swift */; };
+		BD061738258A1CA100DA39BA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD061737258A1CA100DA39BA /* Post.swift */; };
+		BD06173C258E68CB00DA39BA /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD06173B258E68CB00DA39BA /* HomeTableViewCell.swift */; };
+		BD061754258F61B300DA39BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD061753258F61B300DA39BA /* User.swift */; };
 		BD3D7BA1257EBDD600217FF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D7BA0257EBDD600217FF2 /* AppDelegate.swift */; };
 		BD3D7BA3257EBDD600217FF2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D7BA2257EBDD600217FF2 /* SceneDelegate.swift */; };
 		BD3D7BA8257EBDD600217FF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3D7BA6257EBDD600217FF2 /* Main.storyboard */; };
@@ -39,6 +42,9 @@
 		BD0617042587CC8000DA39BA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		BD0617072587DE0B00DA39BA /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		BD0617332587EAAA00DA39BA /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressHUD.swift; path = "../../../Downloads/ProgressHUD-master/ProgressHUD/Sources/ProgressHUD.swift"; sourceTree = "<group>"; };
+		BD061737258A1CA100DA39BA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		BD06173B258E68CB00DA39BA /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		BD061753258F61B300DA39BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BD3D7B9D257EBDD600217FF2 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD3D7BA0257EBDD600217FF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD3D7BA2257EBDD600217FF2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +97,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BD061736258A1C5F00DA39BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BD061737258A1CA100DA39BA /* Post.swift */,
+				BD061753258F61B300DA39BA /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BD06173E258E68F100DA39BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BD06173B258E68CB00DA39BA /* HomeTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BD3D7B94257EBDD500217FF2 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				BD3D7BA6257EBDD600217FF2 /* Main.storyboard */,
+				BD061736258A1C5F00DA39BA /* Model */,
+				BD06173E258E68F100DA39BA /* Views */,
 				BD3D7BEA257F941B00217FF2 /* ViewControllers */,
 				BD3D7BA0257EBDD600217FF2 /* AppDelegate.swift */,
 				BD0617042587CC8000DA39BA /* AuthService.swift */,
@@ -271,10 +296,13 @@
 			files = (
 				BD3D7BBA257EBF3900217FF2 /* SignInViewController.swift in Sources */,
 				BD3D7BCC257F88FE00217FF2 /* ProfileViewController.swift in Sources */,
+				BD06173C258E68CB00DA39BA /* HomeTableViewCell.swift in Sources */,
 				BD0617342587EAAA00DA39BA /* ProgressHUD.swift in Sources */,
 				BD3D7BC3257F88DD00217FF2 /* DiscoverViewController.swift in Sources */,
+				BD061738258A1CA100DA39BA /* Post.swift in Sources */,
 				BD3D7BA1257EBDD600217FF2 /* AppDelegate.swift in Sources */,
 				BD0617082587DE0B00DA39BA /* Config.swift in Sources */,
+				BD061754258F61B300DA39BA /* User.swift in Sources */,
 				BD3D7BC9257F88F400217FF2 /* ActivityViewController.swift in Sources */,
 				BD3D7BA3257EBDD600217FF2 /* SceneDelegate.swift in Sources */,
 				BD3D7BC6257F88E800217FF2 /* CameraViewController.swift in Sources */,

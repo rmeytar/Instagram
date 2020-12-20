@@ -29,7 +29,6 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="r0W-vZ-FmV">
                                         <rect key="frame" x="96" y="10" width="310" height="80"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -72,10 +71,18 @@
                             <constraint firstItem="W5X-a2-Mmu" firstAttribute="top" secondItem="DKm-KM-Q5I" secondAttribute="top" id="yHM-uG-ZMW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Camera" id="bGe-WW-275"/>
+                    <navigationItem key="navigationItem" title="Camera" id="bGe-WW-275">
+                        <barButtonItem key="leftBarButtonItem" title="Remove" id="XhU-ky-MIk">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="remove_TouchUpInside:" destination="Wbt-FP-qbA" id="eak-TR-9Mg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="captionTextView" destination="r0W-vZ-FmV" id="0fh-7B-0io"/>
                         <outlet property="photo" destination="QMY-6G-so5" id="r5j-9z-3Ze"/>
+                        <outlet property="removeButton" destination="XhU-ky-MIk" id="rBi-Jt-t1W"/>
                         <outlet property="shareButton" destination="bYR-ea-GY6" id="7De-La-OcH"/>
                     </connections>
                 </viewController>
