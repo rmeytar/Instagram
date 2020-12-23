@@ -27,26 +27,20 @@ class HomeViewController: UIViewController {
     
     func loadPosts() {
         activityIndicatorView.startAnimating()
-        Database.database().reference().child("posts").observe(.childAdded) { (snapshot: DataSnapshot) in
-            if let dict = snapshot.value as? [String: Any] {
-                let newPost = Post.transformPostPhoto(dict: dict)
-                self.fetchUser(uid: newPost.uid!, completed: {
-                    self.posts.append(newPost)
-                    self.activityIndicatorView.stopAnimating()
-                    self.tableView.reloadData()
-                })
-            }
+        Api.Post.observePosts { (post) in
+            self.fetchUser(uid: post.uid!, completed: {
+                self.posts.append(post)
+                self.activityIndicatorView.stopAnimating()
+                self.tableView.reloadData()
+            })
         }
     }
     
     func fetchUser(uid: String, completed: @escaping () -> Void) {
-        Database.database().reference().child("users").child(uid).observeSingleEvent(of: DataEventType.value, with: {
-            snapshot in
-            if let dict = snapshot.value as? [String: Any] {
-                let user = User.transformUser(dict: dict)
-                self.users.append(user)
-                completed()
-            }
+        Api.User.observeUser(withId: uid, completion: {
+            user in
+            self.users.append(user)
+            completed()
         })
     }
     
@@ -58,6 +52,14 @@ class HomeViewController: UIViewController {
             self.present(signInVC, animated: true, completion: nil)
         } catch let logoutError {
             print(logoutError)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CommentSegue" {
+            let commentVC = segue.destination as! CommentViewController
+            let postId = sender as! String
+            commentVC.postId = postId
         }
     }
 }
@@ -73,6 +75,7 @@ extension HomeViewController: UITableViewDataSource {
         let user = users[indexPath.row]
         cell.post = post
         cell.user = user
+        cell.homeVC = self
         return cell
     }
 }
