@@ -22,6 +22,10 @@
 		BD0617662593B39200DA39BA /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0617652593B39200DA39BA /* Api.swift */; };
 		BD0617692593B44B00DA39BA /* CommentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0617682593B44B00DA39BA /* CommentApi.swift */; };
 		BD06176C2593B73E00DA39BA /* Post_CommentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD06176B2593B73E00DA39BA /* Post_CommentApi.swift */; };
+		BD06176F259A2B4200DA39BA /* HeaderProfileCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD06176E259A2B4200DA39BA /* HeaderProfileCollectionReusableView.swift */; };
+		BD061772259A629F00DA39BA /* MyPostsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD061771259A629F00DA39BA /* MyPostsApi.swift */; };
+		BD061775259A722500DA39BA /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD061774259A722500DA39BA /* PhotoCollectionViewCell.swift */; };
+		BD061778259B6AFF00DA39BA /* HelperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD061777259B6AFE00DA39BA /* HelperService.swift */; };
 		BD3D7BA1257EBDD600217FF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D7BA0257EBDD600217FF2 /* AppDelegate.swift */; };
 		BD3D7BA3257EBDD600217FF2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D7BA2257EBDD600217FF2 /* SceneDelegate.swift */; };
 		BD3D7BA8257EBDD600217FF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3D7BA6257EBDD600217FF2 /* Main.storyboard */; };
@@ -61,6 +65,10 @@
 		BD0617652593B39200DA39BA /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		BD0617682593B44B00DA39BA /* CommentApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentApi.swift; sourceTree = "<group>"; };
 		BD06176B2593B73E00DA39BA /* Post_CommentApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post_CommentApi.swift; sourceTree = "<group>"; };
+		BD06176E259A2B4200DA39BA /* HeaderProfileCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderProfileCollectionReusableView.swift; sourceTree = "<group>"; };
+		BD061771259A629F00DA39BA /* MyPostsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsApi.swift; sourceTree = "<group>"; };
+		BD061774259A722500DA39BA /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		BD061777259B6AFE00DA39BA /* HelperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperService.swift; sourceTree = "<group>"; };
 		BD3D7B9D257EBDD600217FF2 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD3D7BA0257EBDD600217FF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD3D7BA2257EBDD600217FF2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				BD06173B258E68CB00DA39BA /* HomeTableViewCell.swift */,
+				BD06176E259A2B4200DA39BA /* HeaderProfileCollectionReusableView.swift */,
+				BD061774259A722500DA39BA /* PhotoCollectionViewCell.swift */,
 				BD061759258F7B0C00DA39BA /* CommentTableViewCell.swift */,
 			);
 			path = Views;
@@ -165,11 +175,13 @@
 				BD3D7BEA257F941B00217FF2 /* ViewControllers */,
 				BD3D7BA0257EBDD600217FF2 /* AppDelegate.swift */,
 				BD0617042587CC8000DA39BA /* AuthService.swift */,
+				BD061777259B6AFE00DA39BA /* HelperService.swift */,
 				BD0617072587DE0B00DA39BA /* Config.swift */,
 				BD06175F2593AD0C00DA39BA /* PostApi.swift */,
 				BD0617652593B39200DA39BA /* Api.swift */,
 				BD0617682593B44B00DA39BA /* CommentApi.swift */,
 				BD06176B2593B73E00DA39BA /* Post_CommentApi.swift */,
+				BD061771259A629F00DA39BA /* MyPostsApi.swift */,
 				BD0617622593B08900DA39BA /* UserApi.swift */,
 				BD3D7BA2257EBDD600217FF2 /* SceneDelegate.swift */,
 				BD3D7BA9257EBDD700217FF2 /* Assets.xcassets */,
@@ -318,11 +330,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD06176F259A2B4200DA39BA /* HeaderProfileCollectionReusableView.swift in Sources */,
+				BD061775259A722500DA39BA /* PhotoCollectionViewCell.swift in Sources */,
 				BD3D7BBA257EBF3900217FF2 /* SignInViewController.swift in Sources */,
 				BD0617632593B08900DA39BA /* UserApi.swift in Sources */,
 				BD3D7BCC257F88FE00217FF2 /* ProfileViewController.swift in Sources */,
 				BD06173C258E68CB00DA39BA /* HomeTableViewCell.swift in Sources */,
 				BD0617342587EAAA00DA39BA /* ProgressHUD.swift in Sources */,
+				BD061772259A629F00DA39BA /* MyPostsApi.swift in Sources */,
 				BD3D7BC3257F88DD00217FF2 /* DiscoverViewController.swift in Sources */,
 				BD061738258A1CA100DA39BA /* Post.swift in Sources */,
 				BD06175A258F7B0C00DA39BA /* CommentTableViewCell.swift in Sources */,
@@ -331,6 +346,7 @@
 				BD0617692593B44B00DA39BA /* CommentApi.swift in Sources */,
 				BD0617082587DE0B00DA39BA /* Config.swift in Sources */,
 				BD061757258F7ADB00DA39BA /* CommentViewController.swift in Sources */,
+				BD061778259B6AFF00DA39BA /* HelperService.swift in Sources */,
 				BD0617662593B39200DA39BA /* Api.swift in Sources */,
 				BD061754258F61B300DA39BA /* User.swift in Sources */,
 				BD3D7BC9257F88F400217FF2 /* ActivityViewController.swift in Sources */,

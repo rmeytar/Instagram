@@ -6,9 +6,6 @@
 //
 
 import UIKit
-import FirebaseStorage
-import FirebaseDatabase
-import FirebaseAuth
 
 class CameraViewController: UIViewController {
     @IBOutlet weak var photo: UIImageView!
@@ -57,18 +54,9 @@ class CameraViewController: UIViewController {
         view.endEditing(true)
         ProgressHUD.show("Waiting...", interaction: false)
         if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1) {
-            let photoIdString = NSUUID().uuidString
-            print(photoIdString)
-            let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child(photoIdString)
-            storageRef.putData(imageData, metadata: nil, completion: {(metadata, error) in
-                if error != nil {
-                    ProgressHUD.showError(error!.localizedDescription)
-                    return
-                }
-                storageRef.downloadURL(completion: { (url,error) in
-                    let photoUrl = url?.absoluteString
-                    self.sendDataToDatabase(photoUrl: photoUrl!)
-                })
+            HelperService.uploadDataToServer(data: imageData, caption: captionTextView.text!, onSuccess: {
+                self.clean()
+                self.tabBarController?.selectedIndex = 0
             })
         } else {
             ProgressHUD.showError("profile Image can't be empty")
@@ -78,33 +66,6 @@ class CameraViewController: UIViewController {
     @IBAction func remove_TouchUpInside(_ sender: Any) {
         clean()
         handlePost()
-    }
-    
-    
-    func sendDataToDatabase(photoUrl: String) {
-        let ref = Database.database().reference()
-        let postsReference = ref.child("posts")
-        let newPostId = postsReference.childByAutoId().key
-        let newPostReference = postsReference.child(newPostId!)
-        guard let currentUser = Auth.auth().currentUser else {
-            return
-        }
-        let currentUserId = currentUser.uid
-        newPostReference.setValue(["uid": currentUserId, "photoUrl": photoUrl, "caption": captionTextView.text!], withCompletionBlock: {
-            (error, ref) in
-            if error != nil {
-                ProgressHUD.showError(error!.localizedDescription)
-                return
-            }
-            ProgressHUD.showSuccess("Success")
-            
-            //clear the text box - after successfully uploading a photo
-            //clear the photo - after successfully uploading a photo
-            //showing the home tab after successfully uploading a photo
-            self.clean()
-            self.tabBarController?.selectedIndex = 0
-            
-        })
     }
     
     func clean() {

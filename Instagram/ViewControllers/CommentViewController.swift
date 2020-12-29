@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import FirebaseDatabase
-import FirebaseAuth
 
 class CommentViewController: UIViewController {
 
@@ -70,8 +68,6 @@ class CommentViewController: UIViewController {
         })
     }
     
-    
-    
     func fetchUser(uid: String, completed: @escaping () -> Void) {
         Api.User.observeUser(withId: uid, completion: {
             user in
@@ -109,7 +105,7 @@ class CommentViewController: UIViewController {
         let commentsReference = Api.Comment.REF_COMMENTS
         let newCommentId = commentsReference.childByAutoId().key
         let newCommentReference = commentsReference.child(newCommentId!)
-        guard let currentUser = Auth.auth().currentUser else {
+        guard let currentUser = Api.User.CURRENT_USER else {
             return
         }
         let currentUserId = currentUser.uid

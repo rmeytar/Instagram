@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseDatabase
 import SDWebImage
 
 class HomeViewController: UIViewController {
@@ -48,13 +46,12 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func logout_TouchUpInside(_ sender: Any) {
-        do{
-            try Auth.auth().signOut()
+        AuthService.logOut(onSuccess: {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let  signInVC = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
             self.present(signInVC, animated: true, completion: nil)
-        } catch let logoutError {
-            print(logoutError)
+        }) { (errorMessage) in
+            ProgressHUD.showError(errorMessage)
         }
     }
     
