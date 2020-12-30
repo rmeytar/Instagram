@@ -17,13 +17,14 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
-        
         fetchUser()
         fetchMyPosts()
     }
     func fetchUser() {
         Api.User.observeCurrentUser { (user) in
             self.user = user
+            //set the title of the profile view to the user name
+            self.navigationItem.title = user.username
             self.collectionView.reloadData()
         }
     }

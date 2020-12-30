@@ -38,21 +38,7 @@ class HomeTableViewCell: UITableViewCell {
             let photoUrl = URL(string: photoUrlString)
             postImageView.sd_setImage(with: photoUrl)
         }
-        Api.Post.observePost(withId: post!.id!) { (post) in
-            self.updateLike(post: post)
-
-        }
-//
-//        Api.Post.REF_POSTS.child(post!.id!).observe(.childChanged, with: {
-//            snapshot in
-//            if let value = snapshot.value as? Int {
-//                self.likeCountButton.setTitle("\(value) likes", for: UIControl.State.normal)
-//            }
-//        })
-        
-        Api.Post.observeLikeCount(withPostId: post!.id!) { (value) in
-            self.likeCountButton.setTitle("\(value) likes", for: UIControl.State.normal)
-        }
+        self.updateLike(post: self.post!)
     }
     
     func updateLike(post: Post) {
@@ -94,6 +80,9 @@ class HomeTableViewCell: UITableViewCell {
     @objc func likeImageView_TouchUpInside() {
         Api.Post.incrementLikes(postId: post!.id!, onSuccess: { (post) in
             self.updateLike(post: post)
+            self.post?.likes = post.likes
+            self.post?.isLiked = post.isLiked
+            self.post?.likeCount = post.likeCount
         }) { (errorMessage) in
             ProgressHUD.showError(errorMessage)
         }

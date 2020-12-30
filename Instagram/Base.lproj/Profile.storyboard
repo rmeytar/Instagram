@@ -3,13 +3,14 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile-->
+        <!--Profile View Controller-->
         <scene sceneID="n9s-2w-8fq">
             <objects>
                 <viewController id="52a-4e-U2E" customClass="ProfileViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
@@ -188,7 +189,13 @@
                             <constraint firstItem="2KF-VY-eYl" firstAttribute="leading" secondItem="XvI-1Q-DFb" secondAttribute="leading" id="v3l-S8-NBh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="Gts-Aq-qb3"/>
+                    <navigationItem key="navigationItem" id="Gts-Aq-qb3">
+                        <barButtonItem key="leftBarButtonItem" image="discover" id="Q47-gR-BN8">
+                            <connections>
+                                <segue destination="qFq-7e-q6f" kind="show" id="U4K-9a-kJ3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="2KF-VY-eYl" id="aeO-rg-Poy"/>
                     </connections>
@@ -196,6 +203,95 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="483-ZZ-JYw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2962.3188405797105" y="750"/>
+        </scene>
+        <!--People View Controller-->
+        <scene sceneID="eM7-0I-kpW">
+            <objects>
+                <viewController id="qFq-7e-q6f" customClass="PeopleViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vbh-oo-QZB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DVF-Ff-yAD">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PeopleTableViewCell" rowHeight="80" id="ipv-mu-mFa" customClass="PeopleTableViewCell" customModule="Instagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ipv-mu-mFa" id="14y-2j-qJE">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uYJ-4c-Lhh">
+                                                    <rect key="frame" x="15" y="10" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="Jlw-QX-42k"/>
+                                                        <constraint firstAttribute="width" constant="60" id="jbZ-6h-QnK"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="30"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxH-U0-B20">
+                                                    <rect key="frame" x="90" y="26" width="38.5" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v00-yN-Qvb">
+                                                    <rect key="frame" x="299" y="25.5" width="100" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="gQe-tU-mpI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                    <state key="normal" title="Follow">
+                                                        <color key="titleColor" name="AccentColor"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="MxH-U0-B20" secondAttribute="bottom" constant="15" id="0hN-Or-Bv6"/>
+                                                <constraint firstAttribute="trailing" secondItem="v00-yN-Qvb" secondAttribute="trailing" constant="15" id="Eun-98-Cee"/>
+                                                <constraint firstItem="uYJ-4c-Lhh" firstAttribute="leading" secondItem="14y-2j-qJE" secondAttribute="leading" constant="15" id="Oai-fR-ST7"/>
+                                                <constraint firstItem="v00-yN-Qvb" firstAttribute="centerY" secondItem="uYJ-4c-Lhh" secondAttribute="centerY" id="Trf-57-2Bk"/>
+                                                <constraint firstItem="MxH-U0-B20" firstAttribute="leading" secondItem="uYJ-4c-Lhh" secondAttribute="trailing" constant="15" id="UTJ-7h-0iT"/>
+                                                <constraint firstItem="uYJ-4c-Lhh" firstAttribute="top" secondItem="14y-2j-qJE" secondAttribute="top" constant="10" id="caU-5r-JQM"/>
+                                                <constraint firstItem="MxH-U0-B20" firstAttribute="centerY" secondItem="uYJ-4c-Lhh" secondAttribute="centerY" id="mPG-Nn-4Ue"/>
+                                                <constraint firstItem="MxH-U0-B20" firstAttribute="top" secondItem="14y-2j-qJE" secondAttribute="topMargin" constant="15" id="w41-L5-ux4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="followButton" destination="v00-yN-Qvb" id="xkJ-r5-pPc"/>
+                                            <outlet property="nameLabel" destination="MxH-U0-B20" id="mtq-D0-LEa"/>
+                                            <outlet property="profileImage" destination="uYJ-4c-Lhh" id="Y43-iM-PPD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qFq-7e-q6f" id="GEn-Dz-bV7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qKb-vZ-sDc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="DVF-Ff-yAD" secondAttribute="bottom" id="04i-k4-ukM"/>
+                            <constraint firstItem="DVF-Ff-yAD" firstAttribute="trailing" secondItem="qKb-vZ-sDc" secondAttribute="trailing" id="aCe-Vj-AOK"/>
+                            <constraint firstItem="DVF-Ff-yAD" firstAttribute="top" secondItem="vbh-oo-QZB" secondAttribute="top" id="cHn-sk-zgD"/>
+                            <constraint firstItem="DVF-Ff-yAD" firstAttribute="leading" secondItem="vbh-oo-QZB" secondAttribute="leading" id="to4-FG-8y4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hDL-XD-sM1"/>
+                    <connections>
+                        <outlet property="tableView" destination="DVF-Ff-yAD" id="DUp-uL-h1i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rVj-ER-qaV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3766.666666666667" y="750"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0yG-I3-tzn">
@@ -222,6 +318,10 @@
     <resources>
         <image name="Profile" width="20" height="21"/>
         <image name="Profile_Selected" width="20" height="21"/>
+        <image name="discover" width="22" height="22"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

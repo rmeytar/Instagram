@@ -26,6 +26,9 @@
 		BD061772259A629F00DA39BA /* MyPostsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD061771259A629F00DA39BA /* MyPostsApi.swift */; };
 		BD061775259A722500DA39BA /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD061774259A722500DA39BA /* PhotoCollectionViewCell.swift */; };
 		BD061778259B6AFF00DA39BA /* HelperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD061777259B6AFE00DA39BA /* HelperService.swift */; };
+		BD06177B259B861F00DA39BA /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD06177A259B861F00DA39BA /* PeopleViewController.swift */; };
+		BD06177E259B867600DA39BA /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD06177D259B867600DA39BA /* PeopleTableViewCell.swift */; };
+		BD061781259B9A0600DA39BA /* FollowApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD061780259B9A0600DA39BA /* FollowApi.swift */; };
 		BD3D7BA1257EBDD600217FF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D7BA0257EBDD600217FF2 /* AppDelegate.swift */; };
 		BD3D7BA3257EBDD600217FF2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D7BA2257EBDD600217FF2 /* SceneDelegate.swift */; };
 		BD3D7BA8257EBDD600217FF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3D7BA6257EBDD600217FF2 /* Main.storyboard */; };
@@ -69,6 +72,9 @@
 		BD061771259A629F00DA39BA /* MyPostsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsApi.swift; sourceTree = "<group>"; };
 		BD061774259A722500DA39BA /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD061777259B6AFE00DA39BA /* HelperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperService.swift; sourceTree = "<group>"; };
+		BD06177A259B861F00DA39BA /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		BD06177D259B867600DA39BA /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
+		BD061780259B9A0600DA39BA /* FollowApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowApi.swift; sourceTree = "<group>"; };
 		BD3D7B9D257EBDD600217FF2 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD3D7BA0257EBDD600217FF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD3D7BA2257EBDD600217FF2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +143,7 @@
 				BD06173B258E68CB00DA39BA /* HomeTableViewCell.swift */,
 				BD06176E259A2B4200DA39BA /* HeaderProfileCollectionReusableView.swift */,
 				BD061774259A722500DA39BA /* PhotoCollectionViewCell.swift */,
+				BD06177D259B867600DA39BA /* PeopleTableViewCell.swift */,
 				BD061759258F7B0C00DA39BA /* CommentTableViewCell.swift */,
 			);
 			path = Views;
@@ -183,6 +190,7 @@
 				BD06176B2593B73E00DA39BA /* Post_CommentApi.swift */,
 				BD061771259A629F00DA39BA /* MyPostsApi.swift */,
 				BD0617622593B08900DA39BA /* UserApi.swift */,
+				BD061780259B9A0600DA39BA /* FollowApi.swift */,
 				BD3D7BA2257EBDD600217FF2 /* SceneDelegate.swift */,
 				BD3D7BA9257EBDD700217FF2 /* Assets.xcassets */,
 				BD3D7BAB257EBDD700217FF2 /* LaunchScreen.storyboard */,
@@ -204,6 +212,7 @@
 				BD3D7BC5257F88E800217FF2 /* CameraViewController.swift */,
 				BD3D7BC8257F88F400217FF2 /* ActivityViewController.swift */,
 				BD3D7BCB257F88FE00217FF2 /* ProfileViewController.swift */,
+				BD06177A259B861F00DA39BA /* PeopleViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -331,7 +340,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD06176F259A2B4200DA39BA /* HeaderProfileCollectionReusableView.swift in Sources */,
+				BD06177B259B861F00DA39BA /* PeopleViewController.swift in Sources */,
 				BD061775259A722500DA39BA /* PhotoCollectionViewCell.swift in Sources */,
+				BD06177E259B867600DA39BA /* PeopleTableViewCell.swift in Sources */,
 				BD3D7BBA257EBF3900217FF2 /* SignInViewController.swift in Sources */,
 				BD0617632593B08900DA39BA /* UserApi.swift in Sources */,
 				BD3D7BCC257F88FE00217FF2 /* ProfileViewController.swift in Sources */,
@@ -357,6 +368,7 @@
 				BD0617052587CC8000DA39BA /* AuthService.swift in Sources */,
 				BD3D7BBD257EC3EF00217FF2 /* SignUpViewController.swift in Sources */,
 				BD3D7BC0257F88B100217FF2 /* HomeViewController.swift in Sources */,
+				BD061781259B9A0600DA39BA /* FollowApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
