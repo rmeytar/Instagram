@@ -153,11 +153,22 @@
                         <outlet property="activityIndicatorView" destination="k3Q-lv-cid" id="UQk-oX-wvK"/>
                         <outlet property="tableView" destination="ddO-lI-EtB" id="gCA-a3-wyS"/>
                         <segue destination="gXB-aD-H64" kind="show" identifier="CommentSegue" id="wMc-xA-QsZ"/>
+                        <segue destination="w1S-s5-gzR" kind="show" identifier="Home_ProfileSegue" id="dpT-Z5-SX6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GbV-Ga-bJi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-249.27536231884059" y="750"/>
+        </scene>
+        <!--ProfileUserViewController-->
+        <scene sceneID="EcU-9C-H43">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileUserViewController" id="w1S-s5-gzR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cV1-8U-Y3e"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ck-pa-bkk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1207" y="345"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="IXP-F8-aLd">
@@ -286,6 +297,7 @@
                         <outlet property="constraintToBottom" destination="7kH-af-Wjv" id="liJ-uP-64j"/>
                         <outlet property="sendButton" destination="zow-wr-y4J" id="CtO-BG-gJU"/>
                         <outlet property="tableView" destination="brO-ZS-vOx" id="2U4-kn-uJs"/>
+                        <segue destination="w1S-s5-gzR" kind="show" identifier="Comment_ProfileSegue" id="Yzx-dv-MiG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0D-TI-CMg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -314,6 +326,9 @@
             <point key="canvasLocation" x="-249" y="31"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Yzx-dv-MiG"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Comment" width="43" height="41"/>
         <image name="Home" width="21" height="23"/>

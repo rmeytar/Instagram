@@ -29,6 +29,9 @@
 		BD06177B259B861F00DA39BA /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD06177A259B861F00DA39BA /* PeopleViewController.swift */; };
 		BD06177E259B867600DA39BA /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD06177D259B867600DA39BA /* PeopleTableViewCell.swift */; };
 		BD061781259B9A0600DA39BA /* FollowApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD061780259B9A0600DA39BA /* FollowApi.swift */; };
+		BD061784259C9FE700DA39BA /* FeedApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD061783259C9FE700DA39BA /* FeedApi.swift */; };
+		BD061787259CB1E200DA39BA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD061786259CB1E200DA39BA /* SearchViewController.swift */; };
+		BD06178A259CE3C800DA39BA /* ProfileUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD061789259CE3C800DA39BA /* ProfileUserViewController.swift */; };
 		BD3D7BA1257EBDD600217FF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D7BA0257EBDD600217FF2 /* AppDelegate.swift */; };
 		BD3D7BA3257EBDD600217FF2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D7BA2257EBDD600217FF2 /* SceneDelegate.swift */; };
 		BD3D7BA8257EBDD600217FF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3D7BA6257EBDD600217FF2 /* Main.storyboard */; };
@@ -75,6 +78,9 @@
 		BD06177A259B861F00DA39BA /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		BD06177D259B867600DA39BA /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
 		BD061780259B9A0600DA39BA /* FollowApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowApi.swift; sourceTree = "<group>"; };
+		BD061783259C9FE700DA39BA /* FeedApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedApi.swift; sourceTree = "<group>"; };
+		BD061786259CB1E200DA39BA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BD061789259CE3C800DA39BA /* ProfileUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserViewController.swift; sourceTree = "<group>"; };
 		BD3D7B9D257EBDD600217FF2 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD3D7BA0257EBDD600217FF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD3D7BA2257EBDD600217FF2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +197,7 @@
 				BD061771259A629F00DA39BA /* MyPostsApi.swift */,
 				BD0617622593B08900DA39BA /* UserApi.swift */,
 				BD061780259B9A0600DA39BA /* FollowApi.swift */,
+				BD061783259C9FE700DA39BA /* FeedApi.swift */,
 				BD3D7BA2257EBDD600217FF2 /* SceneDelegate.swift */,
 				BD3D7BA9257EBDD700217FF2 /* Assets.xcassets */,
 				BD3D7BAB257EBDD700217FF2 /* LaunchScreen.storyboard */,
@@ -209,9 +216,11 @@
 				BD3D7BBF257F88B100217FF2 /* HomeViewController.swift */,
 				BD061756258F7ADB00DA39BA /* CommentViewController.swift */,
 				BD3D7BC2257F88DD00217FF2 /* DiscoverViewController.swift */,
+				BD061786259CB1E200DA39BA /* SearchViewController.swift */,
 				BD3D7BC5257F88E800217FF2 /* CameraViewController.swift */,
 				BD3D7BC8257F88F400217FF2 /* ActivityViewController.swift */,
 				BD3D7BCB257F88FE00217FF2 /* ProfileViewController.swift */,
+				BD061789259CE3C800DA39BA /* ProfileUserViewController.swift */,
 				BD06177A259B861F00DA39BA /* PeopleViewController.swift */,
 			);
 			path = ViewControllers;
@@ -349,10 +358,12 @@
 				BD06173C258E68CB00DA39BA /* HomeTableViewCell.swift in Sources */,
 				BD0617342587EAAA00DA39BA /* ProgressHUD.swift in Sources */,
 				BD061772259A629F00DA39BA /* MyPostsApi.swift in Sources */,
+				BD061787259CB1E200DA39BA /* SearchViewController.swift in Sources */,
 				BD3D7BC3257F88DD00217FF2 /* DiscoverViewController.swift in Sources */,
 				BD061738258A1CA100DA39BA /* Post.swift in Sources */,
 				BD06175A258F7B0C00DA39BA /* CommentTableViewCell.swift in Sources */,
 				BD06175D25935C0600DA39BA /* Comment.swift in Sources */,
+				BD06178A259CE3C800DA39BA /* ProfileUserViewController.swift in Sources */,
 				BD3D7BA1257EBDD600217FF2 /* AppDelegate.swift in Sources */,
 				BD0617692593B44B00DA39BA /* CommentApi.swift in Sources */,
 				BD0617082587DE0B00DA39BA /* Config.swift in Sources */,
@@ -363,6 +374,7 @@
 				BD3D7BC9257F88F400217FF2 /* ActivityViewController.swift in Sources */,
 				BD06176C2593B73E00DA39BA /* Post_CommentApi.swift in Sources */,
 				BD3D7BA3257EBDD600217FF2 /* SceneDelegate.swift in Sources */,
+				BD061784259C9FE700DA39BA /* FeedApi.swift in Sources */,
 				BD3D7BC6257F88E800217FF2 /* CameraViewController.swift in Sources */,
 				BD0617602593AD0C00DA39BA /* PostApi.swift in Sources */,
 				BD0617052587CC8000DA39BA /* AuthService.swift in Sources */,

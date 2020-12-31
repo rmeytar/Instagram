@@ -7,7 +7,6 @@
 
 import Foundation
 import FirebaseStorage
-import FirebaseDatabase
 
 class HelperService {
     static func uploadDataToServer(data: Data, caption: String, onSuccess: @escaping () -> Void) {
@@ -29,15 +28,14 @@ class HelperService {
             return
         }
         let currentUserId = currentUser.uid
-        newPostReference.setValue(["uid": currentUserId, "photoUrl": photoUrl, "caption": caption], withCompletionBlock: {
+        newPostReference.setValue(["uid": currentUserId, "photoUrl": photoUrl, "caption": caption, "likeCount": 0], withCompletionBlock: {
             (error, ref) in
             if error != nil {
                 ProgressHUD.showError(error!.localizedDescription)
                 return
             }
-            
             //showing only the post of people i follow
-            Database.database().reference().child("feed").child(Api.User.CURRENT_USER!.uid).child(newPostId).setValue(true)
+            Api.Feed.REF_FEED.child(Api.User.CURRENT_USER!.uid).child(newPostId).setValue(true)
             
             let myPostRef =  Api.MyPosts.REF_MYPOSTS.child(currentUserId).child(newPostId)
             myPostRef.setValue(true) { (error, ref) in

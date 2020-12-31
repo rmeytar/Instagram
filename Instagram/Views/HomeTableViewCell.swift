@@ -6,6 +6,10 @@
 //
 
 import UIKit
+protocol HomeTableViewCellDelegate {
+    func goToCommentVC(postId: String)
+    func goToProfileUserVC(userId: String)
+}
 
 class HomeTableViewCell: UITableViewCell {
     
@@ -18,7 +22,7 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var likeCountButton: UIButton!
     @IBOutlet weak var captionLabel: UILabel!
     
-    var homeVC: HomeViewController?
+    var delgate: HomeTableViewCellDelegate?
     
     var post: Post? {
         didSet {
@@ -74,6 +78,16 @@ class HomeTableViewCell: UITableViewCell {
         likeImageView.addGestureRecognizer(tapGestureForLikeImageView)
         likeImageView.isUserInteractionEnabled = true
         
+        let tapGestureForNameLabel = UITapGestureRecognizer(target: self, action: #selector(self.nameLabel_TouchUpInside))
+        nameLabel.addGestureRecognizer(tapGestureForNameLabel)
+        nameLabel.isUserInteractionEnabled = true
+        
+    }
+    
+    @objc func nameLabel_TouchUpInside() {
+        if let id = user?.id {
+            delgate?.goToProfileUserVC(userId: id)
+        }
     }
     
     //performs the like action
@@ -93,7 +107,7 @@ class HomeTableViewCell: UITableViewCell {
     @objc func commentImageView_TouchUpInside() {
         print("commentImageView_TouchUpInside")
         if let id = post?.id {
-            homeVC?.performSegue(withIdentifier: "CommentSegue", sender: id)
+            delgate?.goToCommentVC(postId: id)
         }
     }
     
