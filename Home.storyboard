@@ -142,13 +142,7 @@
                             <constraint firstItem="ddO-lI-EtB" firstAttribute="trailing" secondItem="Irb-p2-Ze5" secondAttribute="trailing" id="tnn-ad-6Id"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="6Kk-Up-fLU">
-                        <barButtonItem key="leftBarButtonItem" title="LogOut" id="ZmW-GV-UZe">
-                            <connections>
-                                <action selector="logout_TouchUpInside:" destination="h1H-C2-b1f" id="dEv-uC-OFA"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Home" id="6Kk-Up-fLU"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="k3Q-lv-cid" id="UQk-oX-wvK"/>
                         <outlet property="tableView" destination="ddO-lI-EtB" id="gCA-a3-wyS"/>
@@ -327,7 +321,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Yzx-dv-MiG"/>
+        <segue reference="dpT-Z5-SX6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Comment" width="43" height="41"/>

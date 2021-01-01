@@ -47,6 +47,8 @@ class HomeViewController: UIViewController {
 //            self.tableView.reloadData()
 //        }
         
+        
+        
         //remove photos from the home view of people i unfollowd
         Api.Feed.observeFeedRemoved(withId: Api.User.CURRENT_USER!.uid) { (post) in
 
@@ -66,15 +68,6 @@ class HomeViewController: UIViewController {
         })
     }
     
-    @IBAction func logout_TouchUpInside(_ sender: Any) {
-        AuthService.logOut(onSuccess: {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let  signInVC = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
-            self.present(signInVC, animated: true, completion: nil)
-        }) { (errorMessage) in
-            ProgressHUD.showError(errorMessage)
-        }
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CommentSegue" {
