@@ -154,7 +154,7 @@ extension CommentViewController: UITableViewDataSource {
         let user = users[indexPath.row]
         cell.comment = comment
         cell.user = user
-        cell.delgate = self
+        cell.delegate = self
         return cell
     }
 }

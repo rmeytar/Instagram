@@ -16,6 +16,8 @@ class Post {
     var likeCount: Int?
     var likes: Dictionary<String, Any>?
     var isLiked: Bool?
+    var ratio: CGFloat?
+    var videoUrl: String?
 }
 
 extension Post {
@@ -24,9 +26,11 @@ extension Post {
         post.id = key
         post.caption = dict["caption"] as? String
         post.photoUrl = dict["photoUrl"] as? String
+        post.videoUrl = dict ["videoUrl"] as? String
         post.uid = dict["uid"] as? String
         post.likeCount = dict["likeCount"] as? Int
         post.likes = dict["likes"] as? Dictionary<String, Any>
+        post.ratio = dict["ratio"] as? CGFloat
         if let currentUserId = Auth.auth().currentUser?.uid {
             if post.likes != nil {
                 post.isLiked = post.likes![currentUserId] != nil

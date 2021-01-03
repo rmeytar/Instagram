@@ -10,6 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--detailViewController-->
+        <scene sceneID="Hb1-L2-fGO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Discover" referencedIdentifier="detailViewController" id="zt3-ua-1uw" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="X8f-VR-8ge"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UpA-gh-n5X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3846" y="1171"/>
+        </scene>
         <!--Profile View Controller-->
         <scene sceneID="n9s-2w-8fq">
             <objects>
@@ -200,6 +210,7 @@
                     <connections>
                         <outlet property="collectionView" destination="2KF-VY-eYl" id="aeO-rg-Poy"/>
                         <segue destination="Q8A-CA-nLa" kind="show" identifier="Profile_SettingSegue" id="jrp-5f-2c8"/>
+                        <segue destination="zt3-ua-1uw" kind="show" identifier="Profile_DetailSegue" id="lsw-mk-EMl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="483-ZZ-JYw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -501,6 +512,7 @@
                     <connections>
                         <outlet property="collectionView" destination="Wa7-xs-eYi" id="3hw-vL-4f9"/>
                         <segue destination="Q8A-CA-nLa" kind="show" identifier="ProfileUser_SettingSegue" id="4Yr-bZ-G7K"/>
+                        <segue destination="zt3-ua-1uw" kind="show" identifier="ProfileUser_DetailSegue" id="5NX-jX-ape"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGr-Fl-jTq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -688,11 +700,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IqL-E8-Qra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3766.666666666667" y="1480.5803571428571"/>
+            <point key="canvasLocation" x="3845" y="1588"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jrp-5f-2c8"/>
+        <segue reference="4Yr-bZ-G7K"/>
+        <segue reference="5NX-jX-ape"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Profile" width="20" height="21"/>

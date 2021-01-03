@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AVFoundation
+
 protocol HomeTableViewCellDelegate {
     func goToCommentVC(postId: String)
     func goToProfileUserVC(userId: String)
@@ -21,8 +23,13 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var shareImageView: UIImageView!
     @IBOutlet weak var likeCountButton: UIButton!
     @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var heightConstraintPhoto: NSLayoutConstraint!
+    @IBOutlet weak var volumeView: UIView!
+    @IBOutlet weak var volumeButton: UIButton!
     
-    var delgate: HomeTableViewCellDelegate?
+    var delegate: HomeTableViewCellDelegate?
+    var player: AVPlayer?
+    var playerLayer: AVPlayerLayer?
     
     var post: Post? {
         didSet {
@@ -36,14 +43,48 @@ class HomeTableViewCell: UITableViewCell {
         }
     }
     
+    var isMuted = true
+    
     func updateView() {
         captionLabel.text = post?.caption
+
+        if let ratio = post?.ratio {
+            heightConstraintPhoto.constant = UIScreen.main.bounds.size.width / ratio
+            layoutIfNeeded()
+        }
+        
         if let photoUrlString = post?.photoUrl {
             let photoUrl = URL(string: photoUrlString)
             postImageView.sd_setImage(with: photoUrl)
         }
+        
+        if let videoUrlString = post?.videoUrl , let videoUrl = URL(string: videoUrlString) {
+            print("videoUrlString: \(videoUrlString)")
+            
+            self.volumeView.isHidden = false
+            player = AVPlayer(url: videoUrl)
+            playerLayer = AVPlayerLayer(player: player)
+            playerLayer?.frame = postImageView.frame
+            playerLayer?.frame.size.width = UIScreen.main.bounds.width
+            self.contentView.layer.addSublayer(playerLayer!)
+            self.volumeView.layer.zPosition = 1
+            
+            player?.play()
+            player?.isMuted = isMuted
+        }
         self.updateLike(post: self.post!)
     }
+    
+    @IBAction func volumeBtn_TouchUpInside(_ sender: UIButton) {
+        if isMuted {
+            isMuted = !isMuted
+            volumeButton.setImage(UIImage(named: "Icon_Volume"), for: UIControl.State.normal)
+        } else {
+            isMuted = !isMuted
+            volumeButton.setImage(UIImage(named: "Icon_Mute"), for: UIControl.State.normal)
+        }
+        player?.isMuted = isMuted
+    }    
     
     func updateLike(post: Post) {
         let imageName = post.likes == nil || !post.isLiked! ? "like" : "likeSelected"
@@ -86,7 +127,7 @@ class HomeTableViewCell: UITableViewCell {
     
     @objc func nameLabel_TouchUpInside() {
         if let id = user?.id {
-            delgate?.goToProfileUserVC(userId: id)
+            delegate?.goToProfileUserVC(userId: id)
         }
     }
     
@@ -107,14 +148,17 @@ class HomeTableViewCell: UITableViewCell {
     @objc func commentImageView_TouchUpInside() {
         print("commentImageView_TouchUpInside")
         if let id = post?.id {
-            delgate?.goToCommentVC(postId: id)
+            delegate?.goToCommentVC(postId: id)
         }
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         print("1111")
+        volumeView.isHidden = true
         profileImageView.image = UIImage(named: "placeholderImg")
+        playerLayer?.removeFromSuperlayer()
+        player?.pause()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -122,5 +166,6 @@ class HomeTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
 }
+
+

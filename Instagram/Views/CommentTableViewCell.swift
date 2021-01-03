@@ -16,7 +16,7 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
-    var delgate: CommentTableViewCellDelegate?
+    var delegate: CommentTableViewCellDelegate?
     
     var comment: Comment? {
         didSet {
@@ -55,7 +55,7 @@ class CommentTableViewCell: UITableViewCell {
     
     @objc func nameLabel_TouchUpInside() {
         if let id = user?.id {
-            delgate?.goToProfileUserVC(userId: id)
+            delegate?.goToProfileUserVC(userId: id)
         }
     }
 
