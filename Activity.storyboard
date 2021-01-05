@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jaG-3a-Q68">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jaG-3a-Q68">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -39,6 +39,11 @@
                                                         <constraint firstAttribute="height" constant="40" id="dSH-ET-vhP"/>
                                                         <constraint firstAttribute="width" constant="40" id="plh-6d-IPx"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBu-Dp-7Wp">
                                                     <rect key="frame" x="94.5" y="18.5" width="72" height="18"/>
@@ -59,19 +64,29 @@
                                                         <constraint firstAttribute="width" constant="40" id="Tyt-Wa-Fl1"/>
                                                     </constraints>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2E8-HR-O9P">
+                                                    <rect key="frame" x="46" y="76" width="368" height="1"/>
+                                                    <color key="backgroundColor" red="0.8862745098" green="0.89411764709999997" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="67G-qK-eox"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="0BM-Lk-WqH" firstAttribute="centerY" secondItem="DvK-PX-cxb" secondAttribute="centerY" id="0Si-ns-yhJ"/>
                                                 <constraint firstItem="DvK-PX-cxb" firstAttribute="centerY" secondItem="8Na-pa-5cb" secondAttribute="centerY" id="1mw-Du-NWB"/>
+                                                <constraint firstItem="2E8-HR-O9P" firstAttribute="leading" secondItem="wNG-Nv-3hr" secondAttribute="leading" constant="46" id="2Dw-zo-rG2"/>
                                                 <constraint firstItem="DvK-PX-cxb" firstAttribute="leading" secondItem="8Na-pa-5cb" secondAttribute="trailing" constant="15" id="7Aa-eU-JU1"/>
                                                 <constraint firstItem="5aY-bp-Jw1" firstAttribute="leading" secondItem="vBu-Dp-7Wp" secondAttribute="leading" id="H4e-w0-PKL"/>
                                                 <constraint firstItem="8Na-pa-5cb" firstAttribute="leading" secondItem="wNG-Nv-3hr" secondAttribute="leading" constant="15" id="Prm-DG-qJa"/>
+                                                <constraint firstAttribute="bottom" secondItem="2E8-HR-O9P" secondAttribute="bottom" id="b2C-BK-hf4"/>
                                                 <constraint firstItem="8Na-pa-5cb" firstAttribute="top" secondItem="wNG-Nv-3hr" secondAttribute="top" constant="15" id="hcu-8r-Fj4"/>
                                                 <constraint firstItem="5aY-bp-Jw1" firstAttribute="top" secondItem="vBu-Dp-7Wp" secondAttribute="bottom" constant="3" id="ojh-Wf-lZa"/>
                                                 <constraint firstItem="vBu-Dp-7Wp" firstAttribute="top" secondItem="DvK-PX-cxb" secondAttribute="top" id="qUq-sM-8mo"/>
                                                 <constraint firstAttribute="trailing" secondItem="0BM-Lk-WqH" secondAttribute="trailing" constant="15" id="r5F-U6-yl1"/>
                                                 <constraint firstAttribute="bottom" secondItem="8Na-pa-5cb" secondAttribute="bottom" constant="15" id="vOZ-3j-c7k"/>
                                                 <constraint firstItem="vBu-Dp-7Wp" firstAttribute="leading" secondItem="DvK-PX-cxb" secondAttribute="trailing" constant="8" id="vl2-JE-h55"/>
+                                                <constraint firstAttribute="trailing" secondItem="2E8-HR-O9P" secondAttribute="trailing" id="xcu-No-lo7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -101,11 +116,22 @@
                     <navigationItem key="navigationItem" title="Activity" id="ErS-iL-HA5"/>
                     <connections>
                         <outlet property="tableView" destination="jaG-3a-Q68" id="F3e-uH-ctI"/>
+                        <segue destination="V4U-PF-juT" kind="show" identifier="Activity_DetailSegue" id="0wv-Uh-oge"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8n-AW-2Mq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2150.7246376811595" y="750"/>
+        </scene>
+        <!--detailViewController-->
+        <scene sceneID="tUY-3G-q4a">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Discover" referencedIdentifier="detailViewController" id="V4U-PF-juT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Lop-RF-ObL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WNP-qG-l3H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2746" y="750"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TsH-GK-rrs">

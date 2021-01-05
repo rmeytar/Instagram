@@ -58,6 +58,10 @@
 		BD3D7BED257F96CE00217FF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD3D7BEC257F96CE00217FF2 /* GoogleService-Info.plist */; };
 		BD561ECF25A1F09F00A6983D /* HashTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD561ECE25A1F09E00A6983D /* HashTagViewController.swift */; };
 		BD561ED225A3949100A6983D /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD561ED125A3949100A6983D /* ActivityTableViewCell.swift */; };
+		BD561EDD25A4649C00A6983D /* NotificationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD561EDC25A4649C00A6983D /* NotificationApi.swift */; };
+		BD561EE025A4668700A6983D /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD561EDF25A4668700A6983D /* Notifications.swift */; };
+		BDE1F4D625A49091000F2C67 /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE1F4D525A49091000F2C67 /* WalkthroughContentViewController.swift */; };
+		BDE1F4D925A490ED000F2C67 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE1F4D825A490ED000F2C67 /* WalkthroughViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +120,10 @@
 		BD3D7BEC257F96CE00217FF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BD561ECE25A1F09E00A6983D /* HashTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagViewController.swift; sourceTree = "<group>"; };
 		BD561ED125A3949100A6983D /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		BD561EDC25A4649C00A6983D /* NotificationApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationApi.swift; sourceTree = "<group>"; };
+		BD561EDF25A4668700A6983D /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		BDE1F4D525A49091000F2C67 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
+		BDE1F4D825A490ED000F2C67 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +160,7 @@
 			children = (
 				BD061737258A1CA100DA39BA /* Post.swift */,
 				BD061753258F61B300DA39BA /* User.swift */,
+				BD561EDF25A4668700A6983D /* Notifications.swift */,
 				BD06175C25935C0600DA39BA /* Comment.swift */,
 			);
 			path = Model;
@@ -210,6 +219,7 @@
 				BD0617652593B39200DA39BA /* Api.swift */,
 				BD0617682593B44B00DA39BA /* CommentApi.swift */,
 				BD06179825A1DB2200DA39BA /* HashTagApi.swift */,
+				BD561EDC25A4649C00A6983D /* NotificationApi.swift */,
 				BD06176B2593B73E00DA39BA /* Post_CommentApi.swift */,
 				BD061771259A629F00DA39BA /* MyPostsApi.swift */,
 				BD0617622593B08900DA39BA /* UserApi.swift */,
@@ -243,6 +253,8 @@
 				BD06178C259E180900DA39BA /* SettingTableViewController.swift */,
 				BD06178F259F312800DA39BA /* detailViewController.swift */,
 				BD561ECE25A1F09E00A6983D /* HashTagViewController.swift */,
+				BDE1F4D525A49091000F2C67 /* WalkthroughContentViewController.swift */,
+				BDE1F4D825A490ED000F2C67 /* WalkthroughViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -383,12 +395,14 @@
 				BD061787259CB1E200DA39BA /* SearchViewController.swift in Sources */,
 				BD06179625A0C84400DA39BA /* FilterCollectionViewCell.swift in Sources */,
 				BD3D7BC3257F88DD00217FF2 /* DiscoverViewController.swift in Sources */,
+				BD561EDD25A4649C00A6983D /* NotificationApi.swift in Sources */,
 				BD061738258A1CA100DA39BA /* Post.swift in Sources */,
 				BD06175A258F7B0C00DA39BA /* CommentTableViewCell.swift in Sources */,
 				BD06175D25935C0600DA39BA /* Comment.swift in Sources */,
 				BD06178A259CE3C800DA39BA /* ProfileUserViewController.swift in Sources */,
 				BD3D7BA1257EBDD600217FF2 /* AppDelegate.swift in Sources */,
 				BD0617692593B44B00DA39BA /* CommentApi.swift in Sources */,
+				BDE1F4D925A490ED000F2C67 /* WalkthroughViewController.swift in Sources */,
 				BD0617082587DE0B00DA39BA /* Config.swift in Sources */,
 				BD061757258F7ADB00DA39BA /* CommentViewController.swift in Sources */,
 				BD561ED225A3949100A6983D /* ActivityTableViewCell.swift in Sources */,
@@ -406,7 +420,9 @@
 				BD06178D259E180900DA39BA /* SettingTableViewController.swift in Sources */,
 				BD3D7BBD257EC3EF00217FF2 /* SignUpViewController.swift in Sources */,
 				BD3D7BC0257F88B100217FF2 /* HomeViewController.swift in Sources */,
+				BD561EE025A4668700A6983D /* Notifications.swift in Sources */,
 				BD561ECF25A1F09F00A6983D /* HashTagViewController.swift in Sources */,
+				BDE1F4D625A49091000F2C67 /* WalkthroughContentViewController.swift in Sources */,
 				BD061790259F312800DA39BA /* detailViewController.swift in Sources */,
 				BD061781259B9A0600DA39BA /* FollowApi.swift in Sources */,
 			);

@@ -18,7 +18,10 @@ class FollowApi {
             snapshot in
             if let dict = snapshot.value as? [String: Any] {
                 for key in dict.keys {
-                    Database.database().reference().child("feed").child(Api.User.CURRENT_USER!.uid).child(key).setValue(true)
+                    if let value = dict[key] as? [String: Any] {
+                    let timestampPost = value["timestamp"] as! Int
+                        Database.database().reference().child("feed").child(Api.User.CURRENT_USER!.uid).child(key).setValue(["timestamp" : timestampPost])
+                    }
                 }
             }
         })
