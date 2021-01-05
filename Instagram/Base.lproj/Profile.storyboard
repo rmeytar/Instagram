@@ -267,6 +267,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="MxH-U0-B20" secondAttribute="bottom" constant="15" id="0hN-Or-Bv6"/>
+                                                <constraint firstItem="v00-yN-Qvb" firstAttribute="leading" secondItem="MxH-U0-B20" secondAttribute="trailing" constant="170.5" id="APw-Vk-IHk"/>
                                                 <constraint firstAttribute="trailing" secondItem="v00-yN-Qvb" secondAttribute="trailing" constant="15" id="Eun-98-Cee"/>
                                                 <constraint firstItem="uYJ-4c-Lhh" firstAttribute="leading" secondItem="14y-2j-qJE" secondAttribute="leading" constant="15" id="Oai-fR-ST7"/>
                                                 <constraint firstItem="v00-yN-Qvb" firstAttribute="centerY" secondItem="uYJ-4c-Lhh" secondAttribute="centerY" id="Trf-57-2Bk"/>
@@ -704,8 +705,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4Yr-bZ-G7K"/>
-        <segue reference="5NX-jX-ape"/>
+        <segue reference="jrp-5f-2c8"/>
+        <segue reference="lsw-mk-EMl"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Profile" width="20" height="21"/>

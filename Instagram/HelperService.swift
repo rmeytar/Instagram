@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseStorage
+import FirebaseDatabase
 
 class HelperService {
     static func uploadDataToServer(data: Data,ratio: CGFloat, videoUrl: URL? = nil, caption: String, onSuccess: @escaping () -> Void) {
@@ -29,16 +30,18 @@ class HelperService {
         let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child(videoIdString)
         
         
-        storageRef.putData(videoUrl.dataRepresentation, metadata: nil) {(metadata, error) in
-//        storageRef.putFile(from: videoUrl, metadata: nil) { (metadata, error) in
+//        storageRef.putData(videoUrl.dataRepresentation, metadata: nil) {(metadata, error) in
+        
+        storageRef.putFile(from: videoUrl, metadata: nil) { (_, error) in
             if error != nil {
                 ProgressHUD.showError(error!.localizedDescription)
+                return
             }
-            storageRef.downloadURL { (url, error) in
+            storageRef.downloadURL(completion: { (url, error) in
                 if let videoUrl = url?.absoluteString {
                     onSuccess(videoUrl)
                 }
-            }
+            })
         }
     }
 
@@ -68,7 +71,6 @@ class HelperService {
         let currentUserId = currentUser.uid
         
         let words = caption.components(separatedBy: CharacterSet.whitespacesAndNewlines)
-        
         for var word in words {
             if word.hasPrefix("#") {
                 word = word.trimmingCharacters(in: CharacterSet.punctuationCharacters)
@@ -77,7 +79,9 @@ class HelperService {
             }
         }
         
-        var dict = ["uid": currentUserId, "photoUrl": photoUrl, "caption": caption, "likeCount": 0,"ratio": ratio] as [String : Any]
+        let timestamp = Int(Date().timeIntervalSince1970)
+        
+        var dict = ["uid": currentUserId, "photoUrl": photoUrl, "caption": caption, "likeCount": 0,"ratio": ratio, "timestamp": timestamp] as [String : Any]
         if let videoUrl = videoUrl {
             dict["videoUrl"] = videoUrl
         }
@@ -90,6 +94,27 @@ class HelperService {
             }
             //showing only the post of people i follow
             Api.Feed.REF_FEED.child(Api.User.CURRENT_USER!.uid).child(newPostId).setValue(true)
+            
+            Api.Follow.REF_FOLLOWERS.child(Api.User.CURRENT_USER!.uid).observeSingleEvent(of: .value, with: {
+                snapshot in
+                let arraySnapshot = snapshot.children.allObjects as! [DataSnapshot]
+                arraySnapshot.forEach({ (child) in
+                    print(child.key)
+                })
+            })
+            
+//            Api.Follow.REF_FOLLOWERS.child(Api.User.CURRENT_USER!.uid).observeSingleEvent(of: .value, with: {
+//                snapshot in
+//                let arraySnapshot = snapshot.children.allObjects as! [DataSnapshot]
+//                arraySnapshot.forEach ({ (child) in
+//                    print(child.key)
+//                    Api.Feed.REF_FEED.child(child.key).updateChildValues(["\(newPostId)": true])
+//                    let newNotificationId = Api.notification.REF_NOTIFICIATION.child(child.key).childByAutoId().key
+//                    let newNotificationReference = Api.notification.REF_NOTIFICIATION.child(child.key).child(newNotificationId!)
+//                    newNotificationReference.setValue(["from": Api.User.CURRENT_USER!.uid, "type": "feed", "objectId": newPostId, "timestap": timestamp])
+//                })
+//            })
+            
             
             let myPostRef =  Api.MyPosts.REF_MYPOSTS.child(currentUserId).child(newPostId)
             myPostRef.setValue(true) { (error, ref) in

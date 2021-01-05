@@ -181,10 +181,16 @@
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umf-LF-1at">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umf-LF-1at" customClass="KILabel">
                                                     <rect key="frame" x="20" y="475" width="374" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXM-NI-coW">
+                                                    <rect key="frame" x="366" y="30" width="33" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -197,11 +203,13 @@
                                                 <constraint firstItem="5Gj-WQ-fia" firstAttribute="height" secondItem="m1v-I9-oDp" secondAttribute="height" id="EyJ-ua-err"/>
                                                 <constraint firstItem="m1v-I9-oDp" firstAttribute="top" secondItem="7dO-9D-gMI" secondAttribute="bottom" constant="15" id="Ezi-6d-GIP"/>
                                                 <constraint firstItem="ti5-Sg-Z4P" firstAttribute="top" secondItem="m1v-I9-oDp" secondAttribute="bottom" constant="15" id="F5F-J5-vwD"/>
+                                                <constraint firstAttribute="trailing" secondItem="dXM-NI-coW" secondAttribute="trailing" constant="15" id="H8s-Qf-Wcq"/>
                                                 <constraint firstAttribute="trailing" secondItem="ti5-Sg-Z4P" secondAttribute="trailing" constant="15" id="Hxe-Jq-sUn"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="umf-LF-1at" secondAttribute="bottom" constant="19" id="JWU-95-zbn"/>
                                                 <constraint firstItem="P6f-Ri-3DB" firstAttribute="leading" secondItem="7dO-9D-gMI" secondAttribute="leading" constant="10" id="Mwo-vg-UhO"/>
                                                 <constraint firstItem="hpR-Un-7EJ" firstAttribute="top" secondItem="zCr-QA-pMt" secondAttribute="top" constant="20" id="OGh-BX-0S8"/>
                                                 <constraint firstItem="kir-XO-Rb8" firstAttribute="leading" secondItem="hpR-Un-7EJ" secondAttribute="trailing" constant="8" id="Rj3-Bh-xNe"/>
+                                                <constraint firstItem="dXM-NI-coW" firstAttribute="centerY" secondItem="kir-XO-Rb8" secondAttribute="centerY" id="X4R-FB-vyf"/>
                                                 <constraint firstAttribute="trailing" secondItem="umf-LF-1at" secondAttribute="trailing" constant="20" id="XJQ-g7-NEx"/>
                                                 <constraint firstItem="5Gj-WQ-fia" firstAttribute="width" secondItem="m1v-I9-oDp" secondAttribute="width" id="a86-P0-8sJ"/>
                                                 <constraint firstItem="ti5-Sg-Z4P" firstAttribute="leading" secondItem="zCr-QA-pMt" secondAttribute="leading" constant="15" id="gf1-8t-Vpc"/>
@@ -220,7 +228,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="captionLabel" destination="umf-LF-1at" id="Xn2-sW-xNM"/>
+                                            <outlet property="captionLabel" destination="umf-LF-1at" id="cCF-Lw-1kg"/>
                                             <outlet property="commentImageView" destination="rG0-Wx-hDw" id="oUU-99-DCl"/>
                                             <outlet property="heightConstraintPhoto" destination="xZB-5t-OC8" id="Sjt-xH-9Oj"/>
                                             <outlet property="likeCountButton" destination="j3f-yP-QaF" id="3fI-uk-fEa"/>
@@ -229,6 +237,7 @@
                                             <outlet property="postImageView" destination="7dO-9D-gMI" id="EiN-Db-vSG"/>
                                             <outlet property="profileImageView" destination="hpR-Un-7EJ" id="GEd-zJ-gHu"/>
                                             <outlet property="shareImageView" destination="5Gj-WQ-fia" id="dIM-sW-YnM"/>
+                                            <outlet property="timeLabel" destination="dXM-NI-coW" id="Pxd-V5-BUg"/>
                                             <outlet property="volumeButton" destination="4SV-b4-m4d" id="azp-rv-umw"/>
                                             <outlet property="volumeView" destination="P6f-Ri-3DB" id="cJJ-PN-nW1"/>
                                         </connections>
@@ -253,11 +262,22 @@
                         <outlet property="tableView" destination="9w2-Oq-ilL" id="uAy-MY-TQ9"/>
                         <segue destination="IrX-P1-VA4" kind="show" identifier="Detail_CommentVC" id="FZK-l5-qbM"/>
                         <segue destination="MJ9-ej-dEV" kind="show" identifier="Detail_ProfileUserSegue" id="5dw-bX-rrO"/>
+                        <segue destination="5vn-7u-MfN" kind="show" identifier="Detail_HashTagSegue" id="H33-r7-JZi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DbN-4t-sNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="545" y="1465"/>
+        </scene>
+        <!--HashTagViewController-->
+        <scene sceneID="x4m-xw-4ij">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="HashTagViewController" id="5vn-7u-MfN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Mm2-Lq-eZi"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GSc-ch-jTq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1226" y="1410"/>
         </scene>
         <!--CommentViewController-->
         <scene sceneID="OoK-4d-fLO">
@@ -267,7 +287,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEA-qP-QBk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1224" y="1415"/>
+            <point key="canvasLocation" x="1231" y="1465"/>
         </scene>
         <!--ProfileUserViewController-->
         <scene sceneID="15X-Wu-KlW">
@@ -277,7 +297,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="djn-Iq-wbL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1225" y="1514"/>
+            <point key="canvasLocation" x="1238" y="1522"/>
         </scene>
         <!--ProfileUserViewController-->
         <scene sceneID="GNU-Jc-KF1">
@@ -401,6 +421,11 @@
             <point key="canvasLocation" x="545" y="31"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="umf-LF-1at">
+            <size key="intrinsicContentSize" width="33" height="16"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Comment" width="43" height="41"/>
         <image name="Icon_Mute" width="25" height="25"/>

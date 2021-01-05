@@ -56,6 +56,8 @@
 		BD3D7BE2257F8FF700217FF2 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3D7BE1257F8FF700217FF2 /* Activity.storyboard */; };
 		BD3D7BE6257F902E00217FF2 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3D7BE4257F902E00217FF2 /* Profile.storyboard */; };
 		BD3D7BED257F96CE00217FF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD3D7BEC257F96CE00217FF2 /* GoogleService-Info.plist */; };
+		BD561ECF25A1F09F00A6983D /* HashTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD561ECE25A1F09E00A6983D /* HashTagViewController.swift */; };
+		BD561ED225A3949100A6983D /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD561ED125A3949100A6983D /* ActivityTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +114,8 @@
 		BD3D7BE1257F8FF700217FF2 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		BD3D7BE5257F902E00217FF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Instagram/Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		BD3D7BEC257F96CE00217FF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BD561ECE25A1F09E00A6983D /* HashTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagViewController.swift; sourceTree = "<group>"; };
+		BD561ED125A3949100A6983D /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 				BD06176E259A2B4200DA39BA /* HeaderProfileCollectionReusableView.swift */,
 				BD061774259A722500DA39BA /* PhotoCollectionViewCell.swift */,
 				BD06179525A0C84400DA39BA /* FilterCollectionViewCell.swift */,
+				BD561ED125A3949100A6983D /* ActivityTableViewCell.swift */,
 				BD06177D259B867600DA39BA /* PeopleTableViewCell.swift */,
 				BD061759258F7B0C00DA39BA /* CommentTableViewCell.swift */,
 			);
@@ -237,6 +242,7 @@
 				BD06177A259B861F00DA39BA /* PeopleViewController.swift */,
 				BD06178C259E180900DA39BA /* SettingTableViewController.swift */,
 				BD06178F259F312800DA39BA /* detailViewController.swift */,
+				BD561ECE25A1F09E00A6983D /* HashTagViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -385,6 +391,7 @@
 				BD0617692593B44B00DA39BA /* CommentApi.swift in Sources */,
 				BD0617082587DE0B00DA39BA /* Config.swift in Sources */,
 				BD061757258F7ADB00DA39BA /* CommentViewController.swift in Sources */,
+				BD561ED225A3949100A6983D /* ActivityTableViewCell.swift in Sources */,
 				BD061778259B6AFF00DA39BA /* HelperService.swift in Sources */,
 				BD0617662593B39200DA39BA /* Api.swift in Sources */,
 				BD061754258F61B300DA39BA /* User.swift in Sources */,
@@ -399,6 +406,7 @@
 				BD06178D259E180900DA39BA /* SettingTableViewController.swift in Sources */,
 				BD3D7BBD257EC3EF00217FF2 /* SignUpViewController.swift in Sources */,
 				BD3D7BC0257F88B100217FF2 /* HomeViewController.swift in Sources */,
+				BD561ECF25A1F09F00A6983D /* HashTagViewController.swift in Sources */,
 				BD061790259F312800DA39BA /* detailViewController.swift in Sources */,
 				BD061781259B9A0600DA39BA /* FollowApi.swift in Sources */,
 			);

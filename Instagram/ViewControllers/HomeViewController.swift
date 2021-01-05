@@ -29,7 +29,7 @@ class HomeViewController: UIViewController {
                 return
             }
             self.fetchUser(uid: postUid, completed: {
-                self.posts.append(post)
+                self.posts.insert(post, at: 0)
                 self.tableView.reloadData()
             })
         }
@@ -46,7 +46,7 @@ class HomeViewController: UIViewController {
     func fetchUser(uid: String, completed: @escaping () -> Void) {
         Api.User.observeUser(withId: uid, completion: {
             user in
-            self.users.append(user)
+            self.users.insert(user, at: 0)
             completed()
         })
     }
@@ -62,6 +62,11 @@ class HomeViewController: UIViewController {
             let profileVC = segue.destination as! ProfileUserViewController
             let userId = sender as! String
             profileVC.userId = userId
+        }
+        if segue.identifier == "Home_HashTagSegue" {
+            let hashTagVC = segue.destination as! HashTagViewController
+            let tag = sender as! String
+            hashTagVC.tag = tag
         }
     }
 }
@@ -88,6 +93,9 @@ extension HomeViewController: HomeTableViewCellDelegate {
     }
     func goToProfileUserVC(userId: String) {
         performSegue(withIdentifier: "Home_ProfileSegue", sender: userId)
+    }
+    func goToHashTag(tag: String) {
+        performSegue(withIdentifier: "Home_HashTagSegue", sender: tag)
     }
 }
 
